@@ -16,14 +16,11 @@ class LoginController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-
         return $this->render('@EasyAdmin/page/login.html.twig', [
-            // parameters usually defined in Symfony login forms
             'error' => $error,
             'last_username' => $lastUsername,
             'csrf_token_intention' => 'authenticate',
             'target_path' => $this->generateUrl('admin'),
-
         ]);
     }
 }

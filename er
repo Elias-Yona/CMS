@@ -1,0 +1,38 @@
+                      List of relations
+ Schema |               Name               |   Type   | Owner 
+--------+----------------------------------+----------+-------
+ public | customer_detail                  | table    | app
+ public | customer_detail_id_seq           | sequence | app
+ public | doctrine_migration_versions      | table    | app
+ public | driver_detail                    | table    | app
+ public | driver_detail_id_seq             | sequence | app
+ public | messenger_messages               | table    | app
+ public | messenger_messages_id_seq        | sequence | app
+ public | shop                             | table    | app
+ public | shop_id_seq                      | sequence | app
+ public | shop_staff_assignment            | table    | app
+ public | shop_staff_assignment_id_seq     | sequence | app
+ public | sim_activation                   | table    | app
+ public | sim_activation_id_seq            | sequence | app
+ public | sim_card                         | table    | app
+ public | sim_card_id_seq                  | sequence | app
+ public | sim_status                       | table    | app
+ public | sim_status_id_seq                | sequence | app
+ public | simcard_type                     | table    | app
+ public | simcard_type_id_seq              | sequence | app
+ public | staff_detail                     | table    | app
+ public | staff_detail_id_seq              | sequence | app
+ public | staff_earning                    | table    | app
+ public | staff_earning_id_seq             | sequence | app
+ public | track                            | table    | app
+ public | track_id_seq                     | sequence | app
+ public | user                             | table    | app
+ public | user_id_seq                      | sequence | app
+ public | van                              | table    | app
+ public | van_id_seq                       | sequence | app
+ public | vehicle_driver_assignment        | table    | app
+ public | vehicle_driver_assignment_id_seq | sequence | app
+ public | vehicle_staff_assignment         | table    | app
+ public | vehicle_staff_assignment_id_seq  | sequence | app
+(33 rows)
+
