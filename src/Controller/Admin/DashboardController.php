@@ -47,22 +47,22 @@ class DashboardController extends AbstractDashboardController
         return [
             // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
             // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
-            MenuItem::subMenu('SIM Cards', 'fas fa-list')->setSubItems([
-                MenuItem::linkToCrud('SIM Card Types', 'fas fa-list', SimcardType::class),
-                MenuItem::linkToCrud('SIM Activations', 'fas fa-list', SimActivation::class),
-                MenuItem::linkToCrud('SIM Cards', 'fas fa-list', SimCard::class),
-                MenuItem::linkToCrud('SIM Status', 'fas fa-list', SimStatus::class),
+            MenuItem::subMenu('SIM Cards', 'fa fa-mobile')->setSubItems([
+                MenuItem::linkToCrud('Types', 'fas fa-sim-card', SimcardType::class),
+                MenuItem::linkToCrud('Activations', 'fas fa-check-square', SimActivation::class),
+                MenuItem::linkToCrud('Card List', 'fas fa-list', SimCard::class),
+                MenuItem::linkToCrud('Status', 'fas fa-info-circle', SimStatus::class),
             ]),
-            MenuItem::linkToCrud('Customers', 'fas fa-list', CustomerDetail::class),
-            MenuItem::linkToCrud('Drivers', 'fas fa-list', DriverDetail::class),
-            MenuItem::linkToCrud('Shops', 'fas fa-list', Shop::class),
+            MenuItem::linkToCrud('Customers', 'fa fa-users', CustomerDetail::class),
+            MenuItem::linkToCrud('Drivers', 'fas fa-truck', DriverDetail::class),
+            MenuItem::linkToCrud('Shops', 'fas fa-store', Shop::class),
             // MenuItem::linkToCrud('', 'fas fa-list', ShopStaffAssignment::class);
 
-            MenuItem::linkToCrud('Staff', 'fas fa-list', StaffDetail::class),
-            MenuItem::linkToCrud('Staff Earnings', 'fas fa-list', StaffEarning::class),
-            MenuItem::linkToCrud('Tracks', 'fas fa-list', Track::class),
-            MenuItem::linkToCrud('Users', 'fas fa-list', User::class),
-            MenuItem::linkToCrud('Vans', 'fas fa-list', Van::class),
+            MenuItem::linkToCrud('Staff', 'fas fa-user', StaffDetail::class),
+            MenuItem::linkToCrud('Staff Earnings', 'fa fa-money', StaffEarning::class),
+            MenuItem::linkToCrud('Tracks', 'fas fa-exchange-alt', Track::class),
+            MenuItem::linkToCrud('Users', 'fas fa-user-friends', User::class),
+            MenuItem::linkToCrud('Vans', 'fas fa-shuttle-van', Van::class),
             // MenuItem::linkToCrud('', 'fas fa-list', VehicleDriverAssignment::class),
             // MenuItem::linkToCrud('', 'fas fa-list', VehicleStaffAssignment::class)
         ];
