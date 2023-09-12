@@ -1,0 +1,43 @@
+## A list of tasks that are to be completed
+
+- [x] Design the database
+- Setup a PHP Debug
+  - [x] Xdebug
+  - [x] Vscode
+- [x] Setup Authentication
+  - [x] Admin Login Page
+  - [] Access Control of routes
+- [x] Setup a templating engine
+  - [x] Twig
+- [x] Setup an ORM library
+  - [x] Doctrine DBAL
+- [x] Setup Admin Bundle
+- [] Cache frequently accessed pages
+  - [] Symfony cache
+  - [] Redis
+- [] Add system maintenance commands
+  - [] Adding users (admins)
+  - [] Changing admin password incase of lockout
+- [x] Add Menu Items to the admin bundle
+- [x] Create Data Fixture for the entities
+- [x] Apply Business Logic
+  - [x] User to Driver
+  - [x] User to Staff
+  - [x] User to Customer
+  - [x] Driver to Van
+  - [x] Staff to Shop
+  - [x] Staff to Van
+  - [x] Staff to Staff earning
+  - [] Simcards
+  - [] Tracls
+- [] Integrate SPAM protection
+  - [] Use a third party service provider
+- [] Add Events and Subscribers
+  - [] When a staff withdraws payment
+  - [] When the system encounters an error
+- Find a way of printing transactions
+  - [] Research
+- [] Refactoring
+  - [] Query optimization
+  - [] Remove Deadcode
+  - [] Encapsulate common logic
