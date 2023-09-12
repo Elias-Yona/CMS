@@ -34,6 +34,11 @@ class Van
         $this->vehicle_driver_assignments = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->number_plate;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

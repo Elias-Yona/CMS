@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\DriverDetail;
+use Doctrine\DBAL\Driver\IBMDB2\Driver;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class DriverDetailCrudController extends AbstractCrudController
@@ -22,4 +23,14 @@ class DriverDetailCrudController extends AbstractCrudController
         ];
     }
     */
+
+    public function createEntity(string $entityFqcn)
+    {
+        $user = $this->getUser();
+        $driver = new DriverDetail();
+        $driver->setUserAccount($user);
+
+
+        return $driver;
+    }
 }

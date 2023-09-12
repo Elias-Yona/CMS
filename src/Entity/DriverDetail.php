@@ -53,6 +53,12 @@ class DriverDetail
     public function __construct()
     {
         $this->vehicle_driver_assignments = new ArrayCollection();
+        $this->updated_at = new \DateTimeImmutable();
+    }
+
+    public function __toString(): string
+    {
+        return $this->user_account;
     }
 
     public function getId(): ?int

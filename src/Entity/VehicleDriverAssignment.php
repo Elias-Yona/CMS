@@ -30,6 +30,11 @@ class VehicleDriverAssignment
     #[ORM\ManyToOne(inversedBy: 'vehicle_driver_assignments')]
     private ?DriverDetail $driverDetail = null;
 
+    public function __construct()
+    {
+        $this->assignment_date = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

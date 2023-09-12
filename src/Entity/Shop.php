@@ -30,6 +30,11 @@ class Shop
         $this->shop_staff_assignments = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

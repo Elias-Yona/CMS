@@ -64,6 +64,11 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Vans', 'fas fa-shuttle-van', Van::class),
             // MenuItem::linkToCrud('', 'fas fa-list', VehicleDriverAssignment::class),
             // MenuItem::linkToCrud('', 'fas fa-list', VehicleStaffAssignment::class)
+            MenuItem::subMenu('Assignments', 'fa fa-clipboard-list')->setSubItems([
+                MenuItem::linkToCrud('Vehicle - Driver', 'fas fa-truck', VehicleDriverAssignment::class),
+                MenuItem::linkToCrud('Shop - Staff', 'fas fa-shop', ShopStaffAssignment::class),
+                MenuItem::linkToCrud('Vehicle - Staff', 'fas fa-truck', VehicleStaffAssignment::class),
+            ]),
         ];
     }
 }

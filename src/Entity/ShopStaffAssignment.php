@@ -28,6 +28,11 @@ class ShopStaffAssignment
     #[ORM\ManyToOne(inversedBy: 'shop_staff_assignments')]
     private ?Shop $shop = null;
 
+    public function __construct()
+    {
+        $this->assignment_date = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
