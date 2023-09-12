@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -30,7 +31,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class UserCrudController extends AbstractCrudController
 {
     public function __construct(
-        public UserPasswordHasherInterface $userPasswordHasher
+        public UserPasswordHasherInterface $userPasswordHasher,
+        public UserRepository $userRepository
     ) {
     }
 
@@ -59,7 +61,14 @@ class UserCrudController extends AbstractCrudController
     //     yield TextField::new('Id Number');
     //     yield EmailField::new('email');
     //     yield DateTimeField::new('Created At');
+    // // }
+    // public function getCategBdd()
+    // {
+    //     $status = $this->userRepository->find($this->user());
+
+    //     return $status->getStatus();
     // }
+
     public function configureFields(string $pageName): iterable
     {
         $fields =
@@ -71,12 +80,18 @@ class UserCrudController extends AbstractCrudController
                 EmailField::new('email'),
                 // TextField::new('password')->onlyOnDetail(),
 
-                ChoiceField::new('status')->setChoices([
-                    'Active' => 'active',
-                    'Inactive' => 'inactive',
-                    'Suspended' => 'suspended',
-                ])->onlyOnDetail(),
-                TextField::new('status'),
+                ChoiceField::new('status')->setFormTypeOptions([
+                    'choices' => [
+                        'selected Active' => 'active',
+                        'Inactive' => 'inactive',
+                        'Suspended' => 'suspended',
+                    ],
+
+                    // 'choice_value' => function (): string {
+                    //     $status = $this->userRepository->find($this->getUser());
+                    //     return $status ? $status->getStatus()  : 'active';
+                    // },
+                ])->onlyOnForms()
             ];
         $password = TextField::new('password')
             ->setFormType(RepeatedType::class)

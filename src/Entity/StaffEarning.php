@@ -16,7 +16,7 @@ class StaffEarning
     #[ORM\Column]
     private ?float $amount = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $date_of_payment = null;
 
     #[ORM\ManyToOne(inversedBy: 'staff_earnings')]

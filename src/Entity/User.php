@@ -49,6 +49,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->created_at = new \DateTimeImmutable();
     }
 
+    public function __toString(): string
+    {
+        return $this->email;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

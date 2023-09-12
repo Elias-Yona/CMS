@@ -3,10 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\StaffDetailRepository;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
 #[ORM\Entity(repositoryClass: StaffDetailRepository::class)]
 class StaffDetail
@@ -57,7 +61,14 @@ class StaffDetail
         $this->shop_staff_assignments = new ArrayCollection();
         $this->staff_earnings = new ArrayCollection();
         $this->simcard_activations = new ArrayCollection();
+        $this->updated_at = new \DateTimeImmutable();
     }
+
+    public function __toString(): string
+    {
+        return $this->user_account;
+    }
+
 
     public function getId(): ?int
     {
